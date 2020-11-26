@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="Online-Exam">
+		<!-- <class>com.lti.entity.User</class> -->
+		<!-- Specifying which ORM implementation we are using (Hibernate/TopLink/EclipseLink/DataNucleus 
+			etc... -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>com.lti.entity.User</class>
+		<class>com.lti.entity.Subject</class>
+		<class>com.lti.entity.Question</class>
+		<class>com.lti.entity.Response</class>
+		<class>com.lti.entity.Result</class>
+		<class>com.lti.entity.UserLevel</class>
+
+		<properties>
+			<!-- DataBase Settings -->
+			<property name="javax.persistence.jdbc.driver"
+				value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:oracle:thin:@localhost:1521:ORCL" />
+			<property name="javax.persistence.jdbc.user" value="hr" />
+			<property name="javax.persistence.jdbc.password" value="hr" />
+			<!-- Additional ORM specific settings -->
+			<property name="hibernate.hbm2ddl.auto" value="update" /> <!-- auto creation of tables -->
+			<property name="hibernate.show_sql" value="true" /> <!-- logging generated SQL -->
+		</properties>
+
+	</persistence-unit>
+</persistence>
